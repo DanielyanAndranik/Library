@@ -1,0 +1,31 @@
+nav {
+	height: 70px;
+}
+
+.nav-wrapper ul {
+	line-height: 70px;
+	;
+}
+
+.brand-logo {
+	font-size: 1.5rem;
+	height: 70px;
+	line-height: 68px;
+}
+
+	.brand-logo .first-letter {
+		font-family: 'Audiowide', cursive;
+		font-size: 3rem;
+		color: #ffff00;
+	}
+
+nav li a {
+	padding: 0px 30px;
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: #ffff00;
+}
+
+	nav li a:hover {
+		background-color: rgba(0, 0, 0, 0.5);
+	}

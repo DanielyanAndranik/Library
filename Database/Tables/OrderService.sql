@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[OrderService]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [OrderId] INT NOT NULL FOREIGN KEY REFERENCES [Order](Id), 
+    [LibrarianId] INT NOT NULL FOREIGN KEY REFERENCES [User](Id), 
+    [ServiceName] NVARCHAR(32) NOT NULL
+)

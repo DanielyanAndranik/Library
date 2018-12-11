@@ -1,0 +1,9 @@
+C:\Users\andranik.danielyan\source\repos\Library\Database\bin\Debug\Database.dacpac
+C:\Users\andranik.danielyan\source\repos\Library\Database\bin\Debug\Database.dll
+C:\Users\andranik.danielyan\source\repos\Library\Database\bin\Debug\Database.pdb
+C:\Users\andranik.danielyan\source\repos\Library\Database\obj\Debug\Model.xml
+C:\Users\andranik.danielyan\source\repos\Library\Database\obj\Debug\refactor.xml
+C:\Users\andranik.danielyan\source\repos\Library\Database\obj\Debug\postdeploy.sql
+C:\Users\andranik.danielyan\source\repos\Library\Database\obj\Debug\predeploy.sql
+C:\Users\andranik.danielyan\source\repos\Library\Database\obj\Debug\Database.dll
+C:\Users\andranik.danielyan\source\repos\Library\Database\obj\Debug\Database.pdb
