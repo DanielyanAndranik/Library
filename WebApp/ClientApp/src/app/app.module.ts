@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignupComponent } from './signup/signup.component';
+import { LibrarianDashboardComponent } from './librarian-dashboard/librarian-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     MainComponent,
     FooterComponent,
-    SignupComponent
+    SignupComponent,
+    LibrarianDashboardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,7 +28,8 @@ import { SignupComponent } from './signup/signup.component';
 	  RouterModule.forRoot([
 		  { path: '', component: MainComponent, pathMatch: 'full' },
 		  { path: 'login', component: LoginComponent, pathMatch: 'full' },
-		  { path: 'signup', component: SignupComponent, pathMatch: 'full' }
+		  { path: 'signup', component: SignupComponent, pathMatch: 'full' },
+		  { path: 'lib_dashboard', component: LibrarianDashboardComponent, pathMatch: 'full' }
     ])
   ],
   providers: [],

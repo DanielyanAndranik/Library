@@ -2,6 +2,10 @@
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-	.page-footer .footer-copyright .container {
-		line-height: 40px;
-	}
+.page-footer .footer-copyright .container {
+	line-height: 40px;
+}
+
+form input, textarea{
+	color:white;
+}
