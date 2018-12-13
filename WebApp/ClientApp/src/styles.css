@@ -2,3 +2,6 @@
 ::-webkit-scrollbar {
 	display: none;
 }
+ul.tabs li.indicator {
+	background-color: #26a69a;
+}
