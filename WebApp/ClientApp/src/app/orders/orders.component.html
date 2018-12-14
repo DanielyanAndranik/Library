@@ -1,0 +1,11 @@
+<a class="waves-effect waves-light btn" (click)='ServiceOnButtonClick()'>Բեռնել</a>
+
+<ul class="collapsible">
+	<li *ngFor="let order of orders">
+		<div class="collapsible-header row">
+			<p class="col s1">{{order.Id}}</p>
+			<p class="col s3 center">{{order.Title}}</p>
+		</div>
+		<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	</li>
+</ul>

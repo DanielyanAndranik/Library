@@ -1,0 +1,12 @@
+a.btn
+{
+	float: right;
+	margin: 10px;
+}
+.collapsible
+{
+	clear: both;
+}
+li div.row{
+	margin-bottom:0;
+}

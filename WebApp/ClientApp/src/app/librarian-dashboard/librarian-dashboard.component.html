@@ -20,73 +20,23 @@
 	</ul>
 
 	<div id="allOrders" class="col s12">
-
-		<ul class="collapsible">
-			<li>
-				<div class="collapsible-header row">
-					<p class="col s1">Համարը</p>
-					<p class="col s3 center">Վերնագիր</p>
-				</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-			<li>
-				<div class="collapsible-header">Second</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-		</ul>
-
+		<app-orders [type]="['allOrders']"></app-orders>
 	</div>
 
 	<div id="newOrders">
-		<ul class="collapsible">
-			<li>
-				<div class="collapsible-header">First</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-			<li>
-				<div class="collapsible-header">Second</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-		</ul>
+		<app-orders [type]="['newOrders']"></app-orders>
 	</div>
 
 	<div id="actualOrders">
-		<ul class="collapsible">
-			<li>
-				<div class="collapsible-header">First</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-			<li>
-				<div class="collapsible-header">Second</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-		</ul>
+		<app-orders [type]="['actualOrders']"></app-orders>
 	</div>
 
 	<div id="completedOrders">
-		<ul class="collapsible">
-			<li>
-				<div class="collapsible-header">First</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-			<li>
-				<div class="collapsible-header">Second</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-		</ul>
+		<app-orders [type]="['completedOrders']"></app-orders>
 	</div>
 
 	<div id="notReturnedOrders">
-		<ul class="collapsible">
-			<li>
-				<div class="collapsible-header">First</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-			<li>
-				<div class="collapsible-header">Second</div>
-				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-			</li>
-		</ul>
+		<app-orders [type]="['notReturnedOrders']"></app-orders>
 	</div>
 
 </div>

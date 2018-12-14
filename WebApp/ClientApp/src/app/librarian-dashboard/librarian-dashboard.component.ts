@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-librarian-dashboard',
   templateUrl: './librarian-dashboard.component.html',
-  styleUrls: ['./librarian-dashboard.component.css']
+	styleUrls: ['./librarian-dashboard.component.css']
 })
 export class LibrarianDashboardComponent implements OnInit {
 

@@ -1,4 +1,7 @@
-.tabs .tab a:hover, .tabs .tab a.active {
+.tabs .tab a:hover,
+.tabs .tab a.active,
+.tabs .tab a:visited,
+.tabs .tab a:link {
 	color: #26a69a;
 	background-color: transparent;
 }
