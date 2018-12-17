@@ -11,30 +11,31 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { LibrarianDashboardComponent } from './librarian-dashboard/librarian-dashboard.component';
-import { OrdersComponent } from './orders/orders.component';
+import { GridComponent } from './grid/grid.component';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    LoginComponent,
-    MainComponent,
-    FooterComponent,
-    SignupComponent,
-    LibrarianDashboardComponent,
-    OrdersComponent
-  ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
-    FormsModule,
-	  RouterModule.forRoot([
-		  { path: '', component: MainComponent, pathMatch: 'full' },
-		  { path: 'login', component: LoginComponent, pathMatch: 'full' },
-		  { path: 'signup', component: SignupComponent, pathMatch: 'full' },
-		  { path: 'lib_dashboard', component: LibrarianDashboardComponent, pathMatch: 'full' }
-    ])
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		LoginComponent,
+		MainComponent,
+		FooterComponent,
+		SignupComponent,
+		LibrarianDashboardComponent,
+		GridComponent
+	],
+	imports: [
+		BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+		HttpClientModule,
+		FormsModule,
+		RouterModule.forRoot([
+			{ path: '', component: MainComponent, pathMatch: 'full' },
+			{ path: 'login', component: LoginComponent, pathMatch: 'full' },
+			{ path: 'signup', component: SignupComponent, pathMatch: 'full' },
+			{ path: 'lib_dashboard', component: LibrarianDashboardComponent, pathMatch: 'full' }
+		])
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

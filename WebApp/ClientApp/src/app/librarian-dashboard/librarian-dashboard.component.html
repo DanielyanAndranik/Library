@@ -3,40 +3,48 @@
 	<li class="tab"><a href="#orders">Պատվերներ</a></li>
 </ul>
 
-<div id="books" class="col s12">
+<div id="books" class="row">
 
-
+	<form class="col s4 offset-s8">
+		<div class="row" style="margin-bottom: 0px; margin-top: 20px;">
+			<div class="input-field col s8">
+				<select multiple>
+					<option value="" disabled>Տեսակ</option>
+					<option value="1">Նոր</option>
+					<option value="2">Ընթացքում</option>
+					<option value="3">Ավարտված</option>
+					<option value="4">Չվերադարձված</option>
+				</select>
+			</div>
+			<div class="input-field col s4 center">
+				<a style="font-size:1.1rem" class="waves-effect waves-light btn-large">Բեռնել</a>
+			</div>
+		</div>
+	</form>
 
 </div>
 
-<div id="orders">
+<div id="orders" class="row">
 
-	<ul class="tabs tabs-fixed-width tab-demo grey-text z-depth-1 nested">
-		<li class="tab"><a href="#allOrders" class="active">Բոլորը</a></li>
-		<li class="tab"><a href="#newOrders">Նոր</a></li>
-		<li class="tab"><a href="#actualOrders">Ընթացիկ</a></li>
-		<li class="tab"><a href="#completedOrders">Ավարտված</a></li>
-		<li class="tab"><a href="#notReturnedOrders">Չվերադարձված</a></li>
-	</ul>
+	<form class="col s4 offset-s8">
+		<div class="row" style="margin-bottom: 0px; margin-top: 20px;">
+			<div class="input-field col s8">
+				<select multiple>
+					<option value="" disabled>Տեսակ</option>
+					<option value="1">Նոր</option>
+					<option value="2">Ընթացքում</option>
+					<option value="3">Ավարտված</option>
+					<option value="4">Չվերադարձված</option>
+				</select>
+			</div>
+			<div class="input-field col s4 center">
+				<a style="font-size:1.1rem" class="waves-effect waves-light btn-large">Բեռնել</a>
+			</div>
+		</div>
+	</form>
 
-	<div id="allOrders" class="col s12">
-		<app-orders [type]="['allOrders']"></app-orders>
-	</div>
-
-	<div id="newOrders">
-		<app-orders [type]="['newOrders']"></app-orders>
-	</div>
-
-	<div id="actualOrders">
-		<app-orders [type]="['actualOrders']"></app-orders>
-	</div>
-
-	<div id="completedOrders">
-		<app-orders [type]="['completedOrders']"></app-orders>
-	</div>
-
-	<div id="notReturnedOrders">
-		<app-orders [type]="['notReturnedOrders']"></app-orders>
+	<div class="col s12">
+		<app-grid></app-grid>
 	</div>
 
 </div>

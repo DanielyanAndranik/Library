@@ -1,0 +1,10 @@
+.header
+{
+	margin-bottom:0px;
+}
+.collapsible li{
+	margin: 0 0 20px 0;
+}
+.collapsible li p{
+	border: 1px solid red;
+}
