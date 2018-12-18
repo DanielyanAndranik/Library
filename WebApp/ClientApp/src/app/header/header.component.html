@@ -10,7 +10,12 @@
 					<li><a [routerLink]="['']">Գլխավոր</a></li>
 					<li><a href="#books">Գրքեր</a></li>
 					<li><a href="#about">Մեր մասին</a></li>
-					<li><a [routerLink]="['login']" style="color:#ffffff; font-weight: 400">Մուտք/Գրանցվել</a></li>
+					<li *ngIf="true; else logout"><a [routerLink]="['login']" style="color:#ffffff; font-weight: 400">Մուտք/Գրանցվել</a></li>
+					<ng-template #logout>
+						<li><a [routerLink]="['logout']" style="color:#ffffff; font-weight: 400">Դուրս գալ</a></li>
+					</ng-template>
+					<li *ngIf="false"><a [routerLink]="['lib_dashboard']">Կառավարում</a></li>
+					<li *ngIf="false"><a [routerLink]="['my_orders']">Պատվերներ</a></li>
 				</ul>
 			</div>
 		</div>

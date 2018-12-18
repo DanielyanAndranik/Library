@@ -1,10 +1,30 @@
-.header
+.header{
+	margin-bottom: 4px;
+}
+.header li {
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin: 0px;
+	border: 1px solid #424242;
+}
+.collapsible {
+	margin-top: 0;
+	border: 1px solid #424242;
+}
+.collapsible li {
+	margin: 0px;
+	border: 1px solid #424242;
+}
+
+li p {
+	margin: 0px;
+	padding: 18px 10px;
+	border-left: 1px solid #757575;
+	border-right: 1px solid #757575;
+	overflow-x:scroll;
+}
+.collapsible
 {
-	margin-bottom:0px;
-}
-.collapsible li{
-	margin: 0 0 20px 0;
-}
-.collapsible li p{
-	border: 1px solid red;
+	max-height: 600px;
+	overflow-y: scroll;
 }

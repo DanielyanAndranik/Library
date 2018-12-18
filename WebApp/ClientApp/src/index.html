@@ -18,7 +18,7 @@
 			var elems = document.querySelectorAll('select');
 			var instances = M.FormSelect.init(elems, {});
 
-			var instance = M.Tabs.init(document.querySelector('.tabs'), { onShow: function (tab) { M.Tabs.init(document.querySelector('.nested'), {}) }});
+			var instance = M.Tabs.init(document.querySelector('.tabs'), {});
 			var collapsables = M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
 
 		});
