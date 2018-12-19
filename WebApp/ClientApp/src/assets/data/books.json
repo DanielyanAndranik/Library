@@ -1,0 +1,57 @@
+[
+	{
+		"id": 1,
+		"author": "J.K.Rowling",
+		"title": "Harry Potter and the Philosopher's Stone",
+		"publisher": "unknown",
+		"published": "1997",
+		"language": "en",
+		"type": "artistic",
+		"totalCount": 5,
+		"availableCount": 2
+	},
+	{
+		"id": 1,
+		"author": "J.K.Rowling",
+		"title": "Harry Potter and the Philosopher's Stone",
+		"publisher": "unknown",
+		"published": "1997",
+		"language": "en",
+		"type": "artistic",
+		"totalCount": 5,
+		"availableCount": 2
+	},
+	{
+		"id": 1,
+		"author": "J.K.Rowling",
+		"title": "Harry Potter and the Philosopher's Stone",
+		"publisher": "unknown",
+		"published": "1997",
+		"language": "en",
+		"type": "artistic",
+		"totalCount": 5,
+		"availableCount": 2
+	},
+	{
+		"id": 1,
+		"author": "J.K.Rowling",
+		"title": "Harry Potter and the Philosopher's Stone",
+		"publisher": "unknown",
+		"published": "1997",
+		"language": "en",
+		"type": "artistic",
+		"totalCount": 5,
+		"availableCount": 2
+	},
+	{
+		"id": 1,
+		"author": "J.K.Rowling",
+		"title": "Harry Potter and the Philosopher's Stone",
+		"publisher": "unknown",
+		"published": "1997",
+		"language": "en",
+		"type": "artistic",
+		"totalCount": 5,
+		"availableCount": 2
+	}
+]

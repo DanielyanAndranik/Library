@@ -1,21 +1,21 @@
 <form class="col s12">
 	<div class="row" style="margin-bottom: 0px; margin-top: 20px;">
-		<div class="col s10 inputs">
+		<div class="col s9 inputs">
 			<div class="row">
 				<div class="input-field col">
-					<input placeholder="Վերնագիր" id="title" type="text" class="validate">
+					<input placeholder="Վերնագիր" name="title" type="text" [(ngModel)]="filter.title">
 				</div>
 				<div class="input-field col">
-					<input placeholder="Հեղինակ" id="author" type="text" class="validate">
+					<input placeholder="Հեղինակ" name="author" type="text" [(ngModel)]="filter.author">
 				</div>
 				<div class="input-field col">
-					<input placeholder="Հրատարակչություն" id="publisher" type="text" class="validate">
+					<input placeholder="Հրատարակչություն" name="publisher" type="text"[(ngModel)]="filter.publisher">
 				</div>
 				<div class="input-field col">
-					<input placeholder="Տարեթիվ" id="date" type="text" class="validate">
+					<input placeholder="Տարեթիվ" name="date" type="text" [(ngModel)]="filter.published">
 				</div>
 				<div class="input-field col">
-					<select multiple>
+					<select name="language" multiple [(ngModel)]="filter.language">
 						<option value="" disabled>Լեզու</option>
 						<option value="1">Հայերեն</option>
 						<option value="2">Անգլերեն</option>
@@ -24,10 +24,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="col s2">
+		<div class="col s3">
 			<div class="row">
-				<div class="input-field col s12 center">
-					<a class="waves-effect waves-light btn-large right">Բեռնել</a>
+				<div class="input-field col s12 right">
+					<a class="waves-effect waves-light btn-large right" (click)="getBooks()">Բեռնել</a>
+					<a class="waves-effect waves-light btn-large right" (click)="newBook()">Նորը</a>
 				</div>
 			</div>
 		</div>
@@ -50,49 +51,21 @@
 	</li>
 </ul>
 <ul class="collapsible">
-	<li>
+	<li *ngFor="let book of books; let index=index; let odd=odd; let even=even;">
 		<div class="collapsible-header row">
-			<p class="col s1">1</p>
-			<p class="col s2">J. K. Rowling</p>
-			<p class="col s2">Harry Potter and The Philosopher's Stone</p>
-			<p class="col s2">Unknown</p>
-			<p class="col s1">Անգլերեն</p>
-			<p class="col s2">Գեղարվեստական</p>
-			<p class="col s1">4</p>
-			<p class="col s1">2</p>
+			<p class="col s1">{{book.id}}</p>
+			<p class="col s2">{{book.author}}</p>
+			<p class="col s2">{{book.title}}</p>
+			<p class="col s2">{{book.publisher}}</p>
+			<p class="col s1">{{book.language}}</p>
+			<p class="col s2">{{book.type}}</p>
+			<p class="col s1">{{book.totalCount}}</p>
+			<p class="col s1">{{book.availableCount}}</p>
 		</div>
 		<div class="collapsible-body row">
-			<span>Lorem ipsum dolor sit amet.</span>
-		</div>
-	</li>
-	<li>
-		<div class="collapsible-header row">
-			<p class="col s1">1</p>
-			<p class="col s2">J. K. Rowling</p>
-			<p class="col s2">Harry Potter and The Philosopher's Stone</p>
-			<p class="col s2">Unknown</p>
-			<p class="col s1">Անգլերեն</p>
-			<p class="col s2">Գեղարվեստական</p>
-			<p class="col s1">4</p>
-			<p class="col s1">2</p>
-		</div>
-		<div class="collapsible-body row">
-			<span>Lorem ipsum dolor sit amet.</span>
-		</div>
-	</li>
-	<li>
-		<div class="collapsible-header row">
-			<p class="col s1">1</p>
-			<p class="col s2">J. K. Rowling</p>
-			<p class="col s2">Harry Potter and The Philosopher's Stone</p>
-			<p class="col s2">Unknown</p>
-			<p class="col s1">Անգլերեն</p>
-			<p class="col s2">Գեղարվեստական</p>
-			<p class="col s1">4</p>
-			<p class="col s1">2</p>
-		</div>
-		<div class="collapsible-body row">
-			<span>Lorem ipsum dolor sit amet.</span>
+			<div class="col s12">
+				<a class="waves-effect waves-light btn-large">Խմբագրել</a>
+			</div>
 		</div>
 	</li>
 </ul>
