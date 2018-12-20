@@ -5,31 +5,12 @@
 
 <div id="books" class="row">
 
-<app-books-board></app-books-board>
+	<app-books-board></app-books-board>
 
 </div>
 
 <div id="orders" class="row">
 
-	<form class="col s4 offset-s8">
-		<div class="row" style="margin-bottom: 0px; margin-top: 20px;">
-			<div class="input-field col s8">
-				<select multiple>
-					<option value="" disabled>Տեսակ</option>
-					<option value="1">Նոր</option>
-					<option value="2">Ընթացքում</option>
-					<option value="3">Ավարտված</option>
-					<option value="4">Չվերադարձված</option>
-				</select>
-			</div>
-			<div class="input-field col s4 center">
-				<a style="font-size:1.1rem" class="waves-effect waves-light btn-large">Բեռնել</a>
-			</div>
-		</div>
-	</form>
-
-	<div class="col s12">
-		<app-grid></app-grid>
-	</div>
+	<app-orders-board></app-orders-board>
 
 </div>

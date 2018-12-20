@@ -1,5 +1,5 @@
 .inputs .input-field {
-	width: 250px;
+	width: 300px;
 }
 
 .header {
@@ -18,16 +18,16 @@
 	border: 1px solid #424242;
 }
 
-.collapsible li {
-	margin: 0px;
-}
+	.collapsible li {
+		margin: 0px;
+	}
 
 li p {
 	margin: 0px;
 	padding: 1rem;
 	border-left: 1px solid #757575;
 	border-right: 1px solid #757575;
-	overflow:scroll;
+	overflow: scroll;
 	white-space: nowrap;
 }
 
@@ -35,12 +35,14 @@ li p {
 	max-height: 600px;
 	overflow-y: scroll;
 }
+
 .collapsible-header.row {
 	padding: 0px;
 	margin: 0px;
 }
-div.collapsible-body.row{
-	margin-bottom:0px;
+
+div.collapsible-body.row {
+	margin-bottom: 0px;
 }
 
 .input-field .btn-large {

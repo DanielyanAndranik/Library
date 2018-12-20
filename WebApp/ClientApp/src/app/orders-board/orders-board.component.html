@@ -1,0 +1,63 @@
+<form class="col s12">
+	<div class="row" style="margin-bottom: 0px; margin-top: 20px;">
+		<div class="col s10 inputs">
+			<div class="row">
+				<div class="input-field col">
+					<input placeholder="Պատվիրող" name="customer" type="text" [(ngModel)]="filter.customer">
+				</div>
+				<div class="input-field col">
+					<select multiple name="type" [(ngModel)]="filter.status">
+						<option value="" disabled>Կարգավիճակ</option>
+						<option value="1">Նոր</option>
+						<option value="2">Ընթացքում</option>
+						<option value="3">Ավարտված</option>
+						<option value="4">Չվերադարձված</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="col s2">
+			<div class="row">
+				<div class="input-field col s12 right">
+					<a class="waves-effect waves-light btn-large right" (click)="getOrders()">Բեռնել</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</form>
+
+<div class="col s12">
+
+	<ul class="header z-depth-4">
+		<li class="row">
+			<p class="col s1">Համար</p>
+			<p class="col s2">Պատվիրող</p>
+			<p class="col s2">Գիրք</p>
+			<p class="col s2">Պատվիրման ամսաթիվ</p>
+			<p class="col s2">Ակնկալվող վերադարձման ամսաթիվ</p>
+			<p class="col s2">Վերադարձման ամսաթիվ</p>
+			<!--<p class="col s1">Ուշացման օրերի քանակ</p>-->
+			<p class="col s1">Կարգավիճակ</p>
+		</li>
+	</ul>
+
+	<ul class="collapsible">
+		<li  *ngFor="let order of orders; let index=index; let odd=odd; let even=even;">
+			<div class="collapsible-header row">
+				<p class="col s1">{{order.id}}</p>
+				<p class="col s2">{{order.customer}}</p>
+				<p class="col s2">{{order.book}}</p>
+				<p class="col s2">{{order.orderDate}}</p>
+				<p class="col s2">{{order.estimateReturnDate}}</p>
+				<p class="col s2">{{order.returnDate}}</p>
+				<!--<p class="col s1">Ուշացման օրերի քանակ</p>-->
+				<p class="col s1">{{order.status}}</p>
+			</div>
+			<div class="collapsible-body">
+				<span>Lorem ipsum dolor sit amet.</span>
+			</div>
+		</li>
+	</ul>
+</div>

@@ -11,9 +11,9 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { LibrarianDashboardComponent } from './librarian-dashboard/librarian-dashboard.component';
-import { GridComponent } from './grid/grid.component';
 import { BooksBoardComponent } from './books-board/books-board.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
+import { OrdersBoardComponent } from './orders-board/orders-board.component';
 
 @NgModule({
 	declarations: [
@@ -24,9 +24,9 @@ import { UserOrdersComponent } from './user-orders/user-orders.component';
 		FooterComponent,
 		SignupComponent,
 		LibrarianDashboardComponent,
-		GridComponent,
 		BooksBoardComponent,
-		UserOrdersComponent
+		UserOrdersComponent,
+		OrdersBoardComponent
 	],
 	imports: [
 		BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
