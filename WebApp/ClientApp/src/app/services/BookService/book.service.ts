@@ -7,6 +7,9 @@ export class BookService {
 
 	constructor(private http: HttpClient) { }
 
+	static mode: string;
+	static editableBook: Book;
+
 	getAll(filter: Filter) {
 		let params = new HttpParams();
 		if (filter.title !== undefined) params = params.append('title', filter.title);
@@ -21,5 +24,12 @@ export class BookService {
 }
 
 export class Book {
-
+	id: number;
+	title: string;
+	author: string;
+	publisher: string;
+	published: number;
+	type: string;
+	count: number;
+	language: string;
 }

@@ -16,7 +16,10 @@ export class BooksBoardComponent implements OnInit {
 		this.filter = new Filter();
 	}
 
-	ngOnInit() {}
+	ngOnInit() {
+		var tab = M.Tabs.init(document.querySelector('.tabs'), {});
+		var collapsables = M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
+	}
 
 	getBooks() {
 		console.log(this.filter);
@@ -24,6 +27,15 @@ export class BooksBoardComponent implements OnInit {
 			data => { this.books = data; },
 			error => console.log(error)
 		);
+	}
+
+	newBook() {
+		BookService.mode = 'Ավելացնել նոր գիրք';
+		BookService.editableBook = new Book();
+	}
+	editBook(book: Book) {
+		BookService.mode = 'Խմբագրել գիրքը';
+		BookService.editableBook = book;
 	}
 }
 

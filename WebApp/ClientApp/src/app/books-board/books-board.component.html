@@ -28,7 +28,7 @@
 			<div class="row">
 				<div class="input-field col s12 right">
 					<a class="waves-effect waves-light btn-large right" (click)="getBooks()">Բեռնել</a>
-					<a class="waves-effect waves-light btn-large right" (click)="newBook()">Նորը</a>
+					<a class="waves-effect waves-light btn-large right" [routerLink]="['../edit_book']" (click)="newBook()">Նորը</a>
 				</div>
 			</div>
 		</div>
@@ -64,7 +64,7 @@
 		</div>
 		<div class="collapsible-body row">
 			<div class="col s12">
-				<a class="waves-effect waves-light btn-large">Խմբագրել</a>
+				<a class="waves-effect waves-light btn-large" [routerLink]="['../edit_book']" (click)="editBook(book)">Խմբագրել</a>
 			</div>
 		</div>
 	</li>

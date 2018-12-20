@@ -14,6 +14,7 @@ import { LibrarianDashboardComponent } from './librarian-dashboard/librarian-das
 import { BooksBoardComponent } from './books-board/books-board.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { OrdersBoardComponent } from './orders-board/orders-board.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
 
 @NgModule({
 	declarations: [
@@ -26,7 +27,8 @@ import { OrdersBoardComponent } from './orders-board/orders-board.component';
 		LibrarianDashboardComponent,
 		BooksBoardComponent,
 		UserOrdersComponent,
-		OrdersBoardComponent
+		OrdersBoardComponent,
+		EditBookComponent
 	],
 	imports: [
 		BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,7 +40,8 @@ import { OrdersBoardComponent } from './orders-board/orders-board.component';
 			{ path: 'signup', component: SignupComponent, pathMatch: 'full' },
 			{ path: 'lib_dashboard', component: LibrarianDashboardComponent, pathMatch: 'full' },
 			{ path: 'lib_dashboard', component: LibrarianDashboardComponent, pathMatch: 'full' },
-			{ path: 'my_orders', component: UserOrdersComponent, pathMatch: 'full' }
+			{ path: 'my_orders', component: UserOrdersComponent, pathMatch: 'full' },
+			{ path: 'edit_book', component: EditBookComponent, pathMatch: 'full' }
 		])
 	],
 	providers: [],

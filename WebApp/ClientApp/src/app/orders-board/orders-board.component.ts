@@ -17,6 +17,8 @@ export class OrdersBoardComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		var tab = M.Tabs.init(document.querySelector('.tabs'), {});
+		var collapsables = M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
 	}
 
 	getOrders() {

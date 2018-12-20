@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<h4 class="center">{{mode}}</h4>
+		</div>
+	</div>
+	<div class="row">
+		<form class="col s12 l4 offset-l4">
+			<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Վերնագիր" name="title" type="text" [(ngModel)]="book.title">
+				</div>
+				<div class="input-field col s12">
+					<input placeholder="Հեղինակ" name="author" type="text" [(ngModel)]="book.author">
+				</div>
+				<div class="input-field col s12">
+					<input placeholder="Հրատարակչություն" name="publisher" type="text" [(ngModel)]="book.publisher">
+				</div>
+				<div class="input-field col s12">
+					<input placeholder="Տարեթիվ" name="date" type="text" [(ngModel)]="book.published">
+				</div>
+				<div class="input-field col s12">
+					<input placeholder="Տեսակ" name="type" type="text" [(ngModel)]="book.type">
+				</div>
+				<div class="input-field col s12">
+					<input placeholder="Քանակ" name="count" type="text" [(ngModel)]="book.totalCount">
+				</div>
+				<div class="input-field col s12">
+					<select multiple name="language" [(ngModel)]="book.language">
+						<option value="" disabled>Լեզու</option>
+						<option value="1">Հայերեն</option>
+						<option value="2">Անգլերեն</option>
+						<option value="3">Ռուսերեն</option>
+					</select>
+				</div>
+				<div class="input-field col s12 center">
+					<a class="waves-effect waves-light btn-large">Հիշել</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
