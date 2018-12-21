@@ -15,6 +15,7 @@ import { BooksBoardComponent } from './books-board/books-board.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { OrdersBoardComponent } from './orders-board/orders-board.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
+import { BooksComponent } from './books/books.component';
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,8 @@ import { EditBookComponent } from './edit-book/edit-book.component';
 		BooksBoardComponent,
 		UserOrdersComponent,
 		OrdersBoardComponent,
-		EditBookComponent
+		EditBookComponent,
+		BooksComponent
 	],
 	imports: [
 		BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +38,7 @@ import { EditBookComponent } from './edit-book/edit-book.component';
 		FormsModule,
 		RouterModule.forRoot([
 			{ path: '', component: MainComponent, pathMatch: 'full' },
+			{ path: 'books', component: BooksComponent, pathMatch: 'full' },
 			{ path: 'login', component: LoginComponent, pathMatch: 'full' },
 			{ path: 'signup', component: SignupComponent, pathMatch: 'full' },
 			{ path: 'lib_dashboard', component: LibrarianDashboardComponent, pathMatch: 'full' },

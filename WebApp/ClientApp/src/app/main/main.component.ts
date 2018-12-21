@@ -9,8 +9,6 @@ export class MainComponent implements OnInit {
 
 	constructor() { }
 
-	ngOnInit() {
-		var selects = M.FormSelect.init(document.querySelectorAll('select'), {});
-	}
+	ngOnInit() {}
 
 }

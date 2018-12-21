@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book, BookService } from '../services/BookService/book.service';
-
+declare var init: Function;
 @Component({
 	selector: 'app-edit-book',
 	templateUrl: './edit-book.component.html',
@@ -15,7 +15,7 @@ export class EditBookComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		var selects = M.FormSelect.init(document.querySelectorAll('select'), {});
+		init();
 	}
 
 }

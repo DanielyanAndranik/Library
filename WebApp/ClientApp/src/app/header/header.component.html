@@ -8,7 +8,7 @@
 				</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a [routerLink]="['']">Գլխավոր</a></li>
-					<li><a href="#books">Գրքեր</a></li>
+					<li><a [routerLink]="['books']">Գրքեր</a></li>
 					<li><a href="#about">Մեր մասին</a></li>
 					<li *ngIf="true; else logout"><a [routerLink]="['login']" style="color:#ffffff; font-weight: 400">Մուտք/Գրանցվել</a></li>
 					<ng-template #logout>

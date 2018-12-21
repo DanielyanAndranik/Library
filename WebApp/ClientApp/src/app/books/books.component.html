@@ -1,0 +1,99 @@
+<div class="container">
+	<div class="section" id="books">
+
+		<div class="row">
+
+			<div class="col s12">
+
+
+				<h3 class="header center-align">Գրադարանում առկա գրքերը</h3>
+
+			</div>
+		</div>
+
+		<div class="divider"></div>
+		<div class="container center-align" *ngIf="showSpinner; else endLoading" >
+
+			<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+		</div>
+		<ng-template #endLoading>
+
+		<div class="row filter">
+			<form class="col s12">
+				<div class="row" style="margin-bottom: 0px; margin-top: 20px;">
+					<div class="input-field col s4">
+						<input placeholder="Վերնագիր" id="title" type="text" class="validate">
+					</div>
+					<div class="input-field col s4">
+						<input placeholder="Հեղինակ" id="author" type="text" class="validate">
+					</div>
+					<div class="input-field col s4">
+						<input placeholder="Հրատարակչություն" id="publisher" type="text" class="validate">
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s4">
+						<input placeholder="Տարեթիվ" id="date" type="text" class="validate">
+					</div>
+					<div class="input-field col s4">
+						<select multiple>
+							<option value="" disabled>Լեզու</option>
+							<option value="1">Հայերեն</option>
+							<option value="2">Անգլերեն</option>
+							<option value="3">Ռուսերեն</option>
+						</select>
+					</div>
+					<div class="input-field col s4 right-align">
+						<a class="waves-effect waves-light btn-large">Փնտրել<i class="fas fa-search"></i></a>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="divider"></div>
+
+		<div class="row">
+
+
+			<div class="col s12">
+				<div class="grid">
+
+					<div class="book z-depth-2" *ngFor="let book of books; let index=index; let odd=odd; let even=even;">
+						<div class="card">
+							<div class="card-image waves-effect waves-block waves-light activator"></div>
+							<div class="card-content">
+								<span class="card-title activator grey-text text-darken-4">{{book.title}}</span>
+								<span class="author activator grey-text text-darken-2">{{book.author}}</span>
+							</div>
+							<div class="card-reveal">
+								<p class="card-title grey-text text-darken-4">{{book.title}}<i class="material-icons right">close</i></p>
+								<p class="grey-text text-darken-3">Հեղինակ: {{book.author}}</p>
+								<p class="grey-text text-darken-3">Տպագրվել է: {{book.published}}թ․</p>
+								<p class="grey-text text-darken-3">Հրատարակչություն: {{book.publisher}}</p>
+								<p class="grey-text text-darken-3">Ժանր: {{book.genre}}</p>
+								<p class="grey-text text-darken-3">Առկայություն։ Առկա է</p>
+								<a class="waves-effect waves-light btn-large">Պատվիրել<i class="fa fa-shopping-cart"></i></a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col s12 center-align">
+				<ul class="pagination">
+					<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+					<li class="waves-effect active"><a href="#!">1</a></li>
+					<li class="waves-effect"><a href="#!">2</a></li>
+					<li class="waves-effect"><a href="#!">3</a></li>
+					<li class="waves-effect"><a href="#!">4</a></li>
+					<li class="waves-effect"><a href="#!">5</a></li>
+					<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+				</ul>
+			</div>
+		</div>
+		</ng-template>
+	</div>
+</div>

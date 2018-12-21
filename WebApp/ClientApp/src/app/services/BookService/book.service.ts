@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Filter } from '../../books-board/books-board.component';
+
 
 @Injectable()
 export class BookService {
@@ -10,7 +10,7 @@ export class BookService {
 	static mode: string;
 	static editableBook: Book;
 
-	getAll(filter: Filter) {
+	getAll(filter: BooksFilter) {
 		let params = new HttpParams();
 		if (filter.title !== undefined) params = params.append('title', filter.title);
 		if (filter.author !== undefined) params = params.append('author', filter.author);
@@ -32,4 +32,12 @@ export class Book {
 	type: string;
 	count: number;
 	language: string;
+}
+
+export class BooksFilter {
+	public title: string;
+	public author: string;
+	public publisher: string;
+	public published: string;
+	public language: Array<string>;
 }

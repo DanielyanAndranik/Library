@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BookService, Book } from '../services/BookService/book.service';
+import { BookService, Book, BooksFilter } from '../services/BookService/book.service';
+
+declare var init: Function;
 
 @Component({
 	selector: 'app-books-board',
@@ -10,15 +12,14 @@ import { BookService, Book } from '../services/BookService/book.service';
 export class BooksBoardComponent implements OnInit {
 
 	public books;
-	filter: Filter;
+	filter: BooksFilter;
 
 	constructor(private service: BookService) {
-		this.filter = new Filter();
+		this.filter = new BooksFilter();
 	}
 
 	ngOnInit() {
-		var tab = M.Tabs.init(document.querySelector('.tabs'), {});
-		var collapsables = M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
+		init();
 	}
 
 	getBooks() {
@@ -39,10 +40,3 @@ export class BooksBoardComponent implements OnInit {
 	}
 }
 
-export class Filter {
-	public title: string;
-	public author: string;
-	public publisher: string;
-	public published: string;
-	public language: Array<string>;
-}

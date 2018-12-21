@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService, OrdersFilter } from '../services/OrdersService/orders.service';
 
+declare var init: Function;
+
 @Component({
 	selector: 'app-orders-board',
 	providers: [OrdersService],
@@ -17,8 +19,7 @@ export class OrdersBoardComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		var tab = M.Tabs.init(document.querySelector('.tabs'), {});
-		var collapsables = M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
+		init();
 	}
 
 	getOrders() {

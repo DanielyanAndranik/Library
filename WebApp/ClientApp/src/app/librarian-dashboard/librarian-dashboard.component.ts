@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var init: Function;
 
 @Component({
   selector: 'app-librarian-dashboard',
@@ -9,7 +10,8 @@ export class LibrarianDashboardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+	ngOnInit() {
+		init();
   }
 
 }
