@@ -18,7 +18,7 @@ export class BookService {
 		if (filter.published !== undefined) params = params.append('published', filter.published);
 		if (filter.language !== undefined ) params = params.append('language', filter.language.join(","));
 		console.log(params);
-		return this.http.get('../../../assets/data/books.json', { params: params });
+		return this.http.get('api/books', { params: params });
 	}
 
 }

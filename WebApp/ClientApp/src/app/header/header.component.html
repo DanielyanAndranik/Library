@@ -10,9 +10,10 @@
 					<li><a [routerLink]="['']">Գլխավոր</a></li>
 					<li><a [routerLink]="['books']">Գրքեր</a></li>
 					<li><a href="#about">Մեր մասին</a></li>
-					<li *ngIf="true; else logout"><a [routerLink]="['login']" style="color:#ffffff; font-weight: 400">Մուտք/Գրանցվել</a></li>
+					<!--<li *ngIf="true; else logout"><a [routerLink]="['login']" style="color:#ffffff; font-weight: 400">Մուտք/Գրանցվել</a></li>-->
+					<li><a *ngIf="true; else logout" class="dropdown-trigger" href="#!" data-target="login-dropdown">Մուտք/Գրանցվել<i class="material-icons right">arrow_drop_down</i></a></li>
 					<ng-template #logout>
-						<li><a [routerLink]="['logout']" style="color:#ffffff; font-weight: 400">Դուրս գալ</a></li>
+						<li><a [routerLink]="['logout']">Դուրս գալ</a></li>
 					</ng-template>
 					<li *ngIf="false"><a [routerLink]="['lib_dashboard']">Կառավարում</a></li>
 					<li *ngIf="false"><a [routerLink]="['my_orders']">Պատվերներ</a></li>
@@ -20,4 +21,8 @@
 			</div>
 		</div>
 	</nav>
+	<ul id="login-dropdown" class="dropdown-content" style="top: 70px !important">
+		<li><a [routerLink]="['login']">Մուտք</a></li>
+		<li><a [routerLink]="['signup']">Գրանցվել</a></li>
+	</ul>
 </header>
