@@ -85,13 +85,23 @@ i.fa-shopping-cart {
 	background: teal;
 }
 
-
-.lds-ellipsis {
-	display: inline-block;
-	position: relative;
-	width: 128px;
-	height: 128px;
+a.dropdown-trigger
+{
+	height: 64px;
+	line-height: 64px;
+	font-size: 1rem;
 }
+	a.dropdown-trigger i {
+		font-size: 1rem;
+		margin-left: 0.3rem;
+	}
+
+	.lds-ellipsis {
+		display: inline-block;
+		position: relative;
+		width: 128px;
+		height: 128px;
+	}
 
 	.lds-ellipsis div {
 		position: absolute;
