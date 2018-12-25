@@ -11,7 +11,7 @@
 					<li><a [routerLink]="['books']">Գրքեր</a></li>
 					<li><a href="#about">Մեր մասին</a></li>
 					<!--<li *ngIf="true; else logout"><a [routerLink]="['login']" style="color:#ffffff; font-weight: 400">Մուտք/Գրանցվել</a></li>-->
-					<li><a *ngIf="true; else logout" class="dropdown-trigger" href="#!" data-target="login-dropdown">Մուտք/Գրանցվել<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a *ngIf="true; else logout" id="login-trigger" class="dropdown-trigger" href="#!" data-target="login-dropdown">Մուտք/Գրանցվել<i class="material-icons right">arrow_drop_down</i></a></li>
 					<ng-template #logout>
 						<li><a [routerLink]="['logout']">Դուրս գալ</a></li>
 					</ng-template>

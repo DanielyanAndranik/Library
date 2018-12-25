@@ -21,7 +21,23 @@
 		function init() {
 			var selects = M.FormSelect.init(document.querySelectorAll('select'), {});
 			var tab = M.Tabs.init(document.querySelector('.tabs'), {});
-			var collapsables = M.Collapsible.init(document.querySelectorAll('.collapsible'), { });
+			var collapsables = M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
+			var filter = M.Dropdown.init(document.getElementById('filter-trigger'),
+				{
+					coverTrigger: false,
+					constrainWidth: false,
+					closeOnClick: false,
+					alignment: 'right'
+				});
+			var sort = M.Dropdown.init(document.getElementById('sort-trigger'),
+				{
+					coverTrigger: false,
+					constrainWidth: false,
+					closeOnClick: false,
+					alignment: 'right'
+				});
+			var login = M.Dropdown.init(document.getElementById('login-trigger'), { coverTrigger: false, hover:true });
+
 		}
 
 		document.addEventListener('DOMContentLoaded', function () {
@@ -29,7 +45,7 @@
 			var selects = M.FormSelect.init(document.querySelectorAll('select'), {});
 			var tab = M.Tabs.init(document.querySelector('.tabs'), {});
 			var collapsables = M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
-			var dropdown = M.Dropdown.init(document.querySelector('.dropdown-trigger'), { coverTrigger: false, hover: true});
+			var login = M.Dropdown.init(document.getElementById('login-trigger'), { coverTrigger: false, hover: true });
 		});
 
 	</script>

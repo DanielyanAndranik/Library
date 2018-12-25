@@ -13,89 +13,74 @@
 		<nav class="top-nav teal">
 			<div class="nav-wrapper right">
 				<ul id="nav-mobile" class="hide-on-med-and-down">
-					<li><a class="dropdown-trigger" data-target="filter-dropdown">Ֆիլտրել<i class="fas fa-filter"></i></a></li>
-					<li><a class="dropdown-trigger" data-target="sort-dropdown">Դասակարգել<i class="fas fa-sort"></i></a></li>
+					<li><a class="dropdown-trigger" id="filter-trigger" data-target="filter-dropdown">Ֆիլտրել<i class="fas fa-filter"></i></a></li>
+					<li><a class="dropdown-trigger" id="sort-trigger" data-target="sort-dropdown">Դասակարգել ըստ<i class="fas fa-sort"></i></a></li>
+					<li><a href="#"><i class="material-icons">view_list</i></a></li>
+					<li><a href="#"><i class="material-icons">view_module</i></a></li>
+					
 				</ul>
 			</div>
 
 		</nav>
 
 		<div id="filter-dropdown" class="dropdown-content">
-			<form class="col s12">
-					<div class="row" style="margin-bottom: 0px; margin-top: 20px;">
-						<div class="input-field col">
-							<input placeholder="Վերնագիր" id="title" type="text" class="validate">
-						</div>
-						<div class="input-field col">
-							<input placeholder="Հեղինակ" id="author" type="text" class="validate">
-						</div>
-						<div class="input-field col">
-							<input placeholder="Հրատարակչություն" id="publisher" type="text" class="validate">
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col">
-							<input placeholder="Տարեթիվ" id="date" type="text" class="validate">
-						</div>
-						<div class="input-field col">
-							<select multiple>
-								<option value="" disabled>Լեզու</option>
-								<option value="1">Հայերեն</option>
-								<option value="2">Անգլերեն</option>
-								<option value="3">Ռուսերեն</option>
-							</select>
-						</div>
-					</div>
-				</form>
+			<form autocomplete="off">
+				<div class="input-field">
+					<input placeholder="Վերնագիր" id="title" type="text" class="validate">
+				</div>
+				<div class="input-field">
+					<input placeholder="Հեղինակ" id="author" type="text" class="validate">
+				</div>
+				<div class="input-field">
+					<input placeholder="Հրատարակչություն" id="publisher" type="text" class="validate">
+				</div>
+				<div class="input-field">
+					<input placeholder="Տարեթիվ" id="date" type="text" class="validate">
+				</div>
+				<div class="input-field">
+					<p class="center grey-text text-darken-3">Լեզու</p>
+					<p>
+						<label>
+							<input type="checkbox" class="filled-in"/>
+							<span>Հայերեն</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input type="checkbox" class="filled-in"/>
+							<span>Անգլերեն</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input type="checkbox" class="filled-in"/>
+							<span>Ռուսերեն</span>
+						</label>
+					</p>
+				</div>
+				<div class="input-field center-align">
+					<a class="waves-effect waves-light btn">Հաստատել</a>
+				</div>
+			</form>
 		</div>
+
 		<ul id="sort-dropdown" class="dropdown-content">
-			<li><a [routerLink]="['login']">Մուտք</a></li>
-			<li><a [routerLink]="['signup']">Գրանցվել</a></li>
+			<li><a>Վերնագրի</a></li>
+			<li><a>Հեղինակի</a></li>
+			<li><a>Հրատարակչության</a></li>
+			<li><a>Տպագրման ամսաթվի</a></li>
+			<li><a>Ռեյտինգի</a></li>
 		</ul>
 
 		<div class="container center-align" *ngIf="showSpinner; else endLoading">
 
 			<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+
 		</div>
 
 		<ng-template #endLoading>
 
-			<div class="row filter">
-				<form class="col s12">
-					<div class="row" style="margin-bottom: 0px; margin-top: 20px;">
-						<div class="input-field col s4">
-							<input placeholder="Վերնագիր" id="title" type="text" class="validate">
-						</div>
-						<div class="input-field col s4">
-							<input placeholder="Հեղինակ" id="author" type="text" class="validate">
-						</div>
-						<div class="input-field col s4">
-							<input placeholder="Հրատարակչություն" id="publisher" type="text" class="validate">
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s4">
-							<input placeholder="Տարեթիվ" id="date" type="text" class="validate">
-						</div>
-						<div class="input-field col s4">
-							<select multiple>
-								<option value="" disabled>Լեզու</option>
-								<option value="1">Հայերեն</option>
-								<option value="2">Անգլերեն</option>
-								<option value="3">Ռուսերեն</option>
-							</select>
-						</div>
-						<div class="input-field col s4 right-align">
-							<a class="waves-effect waves-light btn-large">Փնտրել<i class="fas fa-search"></i></a>
-						</div>
-					</div>
-				</form>
-			</div>
-
-			<div class="divider"></div>
-
 			<div class="row">
-
 
 				<div class="col s12">
 					<div class="grid">

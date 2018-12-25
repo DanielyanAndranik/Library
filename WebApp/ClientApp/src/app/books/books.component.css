@@ -1,12 +1,36 @@
-.filter form .btn-large {
-	font-size: 1.2rem;
-	font-weight: 600;
+a.dropdown-trigger {
+	height: 64px;
+	line-height: 64px;
+	font-size: 1rem;
 }
 
-	.filter form .btn-large i {
-		font-size: 1.1rem;
-		font-weight: 600;
-		margin-left: 15px;
+	a.dropdown-trigger i {
+		font-size: 1rem;
+		margin-left: 0.3rem;
+	}
+nav .input-field input[type=text]:valid {
+	border-bottom: 1px solid #9e9e9e;
+}
+#filter-dropdown
+{
+	overflow: scroll;
+	height: auto;
+}
+#filter-dropdown form{
+	height: auto;
+}
+.input-field {
+	height: auto;
+	width: 320px;
+}
+	.input-field p{
+		margin: 0 20px;
+		height: 30px;
+		line-height: 30px;
+	}
+	.input-field input {
+		width: 280px;
+		margin: 0 20px;
 	}
 
 .grid {
@@ -85,23 +109,14 @@ i.fa-shopping-cart {
 	background: teal;
 }
 
-a.dropdown-trigger
-{
-	height: 64px;
-	line-height: 64px;
-	font-size: 1rem;
-}
-	a.dropdown-trigger i {
-		font-size: 1rem;
-		margin-left: 0.3rem;
-	}
 
-	.lds-ellipsis {
-		display: inline-block;
-		position: relative;
-		width: 128px;
-		height: 128px;
-	}
+
+.lds-ellipsis {
+	display: inline-block;
+	position: relative;
+	width: 128px;
+	height: 128px;
+}
 
 	.lds-ellipsis div {
 		position: absolute;
