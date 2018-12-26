@@ -17,6 +17,10 @@ nav {
 		font-size: 3rem;
 		color: #ffff00;
 	}
+nav a.sidenav-trigger i{
+	height:70px;
+	line-height: 70px;
+}
 
 nav li a {
 	padding: 0px 20px;

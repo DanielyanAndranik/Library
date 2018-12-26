@@ -41,7 +41,13 @@
 		}
 
 		document.addEventListener('DOMContentLoaded', function () {
-
+			var sidenavs = M.Sidenav.init(document.querySelectorAll('.sidenav'),
+				{
+					edge: 'right'
+				});
+			sidenavs.on('click tap', 'li a', () => {
+				sidenavs.sidenav('close');
+			});
 			var selects = M.FormSelect.init(document.querySelectorAll('select'), {});
 			var tab = M.Tabs.init(document.querySelector('.tabs'), {});
 			var collapsables = M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
