@@ -6,11 +6,10 @@
 					<span class="first-letter">R</span><span>estart </span>
 					<span class="first-letter">L</span><span>ibrary</span>
 				</a>
-				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+				<a href="#" data-target="sidenav-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a [routerLink]="['']">Գլխավոր</a></li>
 					<li><a [routerLink]="['books']">Գրքեր</a></li>
-					<li><a href="#about">Մեր մասին</a></li>
 					<!--<li *ngIf="true; else logout"><a [routerLink]="['login']" style="color:#ffffff; font-weight: 400">Մուտք/Գրանցվել</a></li>-->
 					<li><a *ngIf="true; else logout" id="login-trigger" class="dropdown-trigger" data-target="login-dropdown">Մուտք/Գրանցվել<i class="material-icons right">arrow_drop_down</i></a></li>
 					<ng-template #logout>
@@ -27,10 +26,9 @@
 		<li><a [routerLink]="['signup']">Գրանցվել</a></li>
 	</ul>
 
-	<ul class="sidenav hide-on-large-only" id="mobile-demo">
+	<ul class="sidenav hide-on-large-only" id="sidenav-menu">
 		<li><a [routerLink]="['']">Գլխավոր</a></li>
 		<li><a [routerLink]="['books']">Գրքեր</a></li>
-		<li><a href="#about">Մեր մասին</a></li>
 		<li *ngIf="false"><a [routerLink]="['lib_dashboard']">Կառավարում</a></li>
 		<li *ngIf="false"><a [routerLink]="['my_orders']">Պատվերներ</a></li>
 		<!--<li *ngIf="true; else logout"><a [routerLink]="['login']" style="color:#ffffff; font-weight: 400">Մուտք/Գրանցվել</a></li>-->

@@ -17,8 +17,9 @@ nav {
 		font-size: 3rem;
 		color: #ffff00;
 	}
-nav a.sidenav-trigger i{
-	height:70px;
+
+nav a.sidenav-trigger i {
+	height: 70px;
 	line-height: 70px;
 }
 
@@ -36,15 +37,21 @@ ul.dropdown-content {
 	background: #212121;
 }
 
-	.dropdown-content li:hover {
-		background-color: transparent;
-	}
-	.dropdown-content li {
-		background-color: transparent;
-		min-height: 0;
+.dropdown-content li:hover {
+	background-color: transparent;
+}
+
+.dropdown-content li {
+	background-color: transparent;
+	min-height: 0;
+	line-height: 50px;
+}
+
+	.dropdown-content li a {
+		height: 50px;
 		line-height: 50px;
 	}
-		.dropdown-content li a {
-			height: 50px;
-			line-height: 50px;
-		}
+
+#sidenav-menu {
+	
+}

@@ -2895,6 +2895,12 @@ ul.staggered-list li {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+	.hide-on-large-and-down {
+		display: none !important;
+	}
+}
+
 @media only screen and (min-width: 1201px) {
   .hide-on-extra-large-only {
     display: none !important;
