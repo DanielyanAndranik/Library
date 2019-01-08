@@ -12,20 +12,6 @@
 
 		<div class="divider"></div>
 
-		<!--<nav class="top-nav teal">
-			<div class="nav-wrapper right">
-				<ul id="nav-mobile" class="">
-					<li><a class="dropdown-trigger" id="filter-trigger" data-target="filter-dropdown">Ֆիլտրել<i class="fas fa-filter"></i></a></li>
-					<li><a class="dropdown-trigger" id="sort-trigger" data-target="sort-dropdown">Սորտավորել<i class="fas fa-sort"></i></a></li>
-					<li><a href="#"><i class="material-icons">view_list</i></a></li>
-					<li><a href="#"><i class="material-icons">view_module</i></a></li>
-
-				</ul>
-			</div>
-
-		</nav>-->
-		<!--<a data-target="sidenav-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>-->
-
 		<div class="container center-align" *ngIf="showSpinner; else endLoading">
 
 			<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
@@ -34,65 +20,76 @@
 
 		<ng-template #endLoading>
 
+
+
+			<ul id="sort-filter" class="sidenav">
+				<li>
+
+					<div class="row">
+
+						<h5 class="center">Ֆիլտրել</h5>
+
+						<form autocomplete="off">
+
+							<div class="input-field">
+								<input placeholder="Վերնագիր" id="title" type="text" class="validate">
+							</div>
+							<div class="input-field">
+								<input placeholder="Հեղինակ" id="author" type="text" class="validate">
+							</div>
+							<div class="input-field">
+								<input placeholder="Հրատարակչություն" id="publisher" type="text" class="validate">
+							</div>
+							<div class="input-field">
+								<input placeholder="Տարեթիվ" id="date" type="text" class="validate">
+							</div>
+							<div class="input-field">
+								<p class="center grey-text text-darken-3">Լեզու</p>
+								<p>
+									<label>
+										<input type="checkbox" class="filled-in" />
+										<span>Հայերեն</span>
+									</label>
+								</p>
+								<p>
+									<label>
+										<input type="checkbox" class="filled-in" />
+										<span>Անգլերեն</span>
+									</label>
+								</p>
+								<p>
+									<label>
+										<input type="checkbox" class="filled-in" />
+										<span>Ռուսերեն</span>
+									</label>
+								</p>
+							</div>
+							<!--<div class="input-field center-align">
+								<a class="waves-effect waves-light btn">Հաստատել</a>
+							</div>-->
+						</form>
+
+						<div class="divider"></div>
+
+						<h5 class="center">Սորտավորել ըստ</h5>
+						<div class="collection">
+							<a class="collection-item">Վերնագրի<i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></a>
+							<a class="collection-item">Հեղինակի<i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></a>
+							<a class="collection-item">Հրատարակչության<i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></a>
+							<a class="collection-item">Վերնագրի<i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></a>
+						</div>
+					</div>
+				</li>
+
+
+			</ul>
+
+
+			<a href="#" id="sort-filter-tigger" data-target="sort-filter" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
 			<div class="row">
 
-				<div class="col xl3 hide-on-large-and-down sort-filter">
-
-					<h5 class="center">Ֆիլտրել</h5>
-
-					<form autocomplete="off">
-
-						<div class="input-field">
-							<input placeholder="Վերնագիր" id="title" type="text" class="validate">
-						</div>
-						<div class="input-field">
-							<input placeholder="Հեղինակ" id="author" type="text" class="validate">
-						</div>
-						<div class="input-field">
-							<input placeholder="Հրատարակչություն" id="publisher" type="text" class="validate">
-						</div>
-						<div class="input-field">
-							<input placeholder="Տարեթիվ" id="date" type="text" class="validate">
-						</div>
-						<div class="input-field">
-							<p class="center grey-text text-darken-3">Լեզու</p>
-							<p>
-								<label>
-									<input type="checkbox" class="filled-in" />
-									<span>Հայերեն</span>
-								</label>
-							</p>
-							<p>
-								<label>
-									<input type="checkbox" class="filled-in" />
-									<span>Անգլերեն</span>
-								</label>
-							</p>
-							<p>
-								<label>
-									<input type="checkbox" class="filled-in" />
-									<span>Ռուսերեն</span>
-								</label>
-							</p>
-						</div>
-						<!--<div class="input-field center-align">
-			<a class="waves-effect waves-light btn">Հաստատել</a>
-		</div>-->
-					</form>
-
-					<div class="divider"></div>
-
-					<h5 class="center">Սորտավորել ըստ</h5>
-					<div class="collection">
-						<a class="collection-item">Վերնագրի<i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></a>
-						<a class="collection-item">Հեղինակի<i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></a>
-						<a class="collection-item">Հրատարակչության<i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></a>
-						<a class="collection-item">Վերնագրի<i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></a>
-					</div>
-
-				</div>
-
-				<div class="col xl9 s12 grid">
+				<div class="col s12">
 					<div class="grid">
 
 						<div class="book z-depth-2" *ngFor="let book of books; let index=index; let odd=odd; let even=even;">

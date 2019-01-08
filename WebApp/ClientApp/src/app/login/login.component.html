@@ -1,37 +1,33 @@
-<div class="container">
-	<div class="row" style="margin-bottom: 0;">
-		<div class="col s12">
-			<div class="section">
-				<div class="row">
-					<div class="col s12">
-						<h3 class="header center-align">Մուտք</h3>
-					</div>
-				</div>
-				<div class="row">
-					<form class="col s12 xl4 offset-xl4" (submit)="login($event)">
-						<div class="row">
-							<div class="input-field col s12">
-								<input id="username" type="text" class="validate">
-								<label for="username">Օգտանուն</label>
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s12">
-								<input id="password" type="password" class="validate">
-								<label for="password">Գաղտնաբառ</label>
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s12 center-align">
-								<button class="waves-effect waves-light btn-large">Մուտք</button>
-							</div>
-						</div>
-						<div class="row">
-							<p class="center-align">Դեռ չե՞ք գրանցվել։ Գրանցվե՛ք <a  [routerLink]="['../signup']" style="color: teal">այստեղ</a>։</p>
-						</div>
-					</form>
+<main>
+	<div>
+			<div class="row">
+				<div class="col s12">
+					<h3 class="header center-align">Մուտք</h3>
 				</div>
 			</div>
+			<div class="row">
+				<form class="col s12" (submit)="login($event)">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="username" type="text" class="validate">
+							<label for="username">Օգտանուն</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="password" type="password" class="validate">
+							<label for="password">Գաղտնաբառ</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12 center-align">
+							<button class="waves-effect waves-light btn-large">Մուտք</button>
+						</div>
+					</div>
+					<!--<div class="row">
+						<p class="center-align">Դեռ չե՞ք գրանցվել։ Գրանցվե՛ք <a [routerLink]="['../signup']" style="color: teal">այստեղ</a>։</p>
+					</div>-->
+				</form>
+			</div>
 		</div>
-	</div>
-</div>
+</main>
