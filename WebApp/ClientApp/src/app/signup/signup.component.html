@@ -7,49 +7,51 @@
 					<h3 class="header center-align">Գրանցում</h3>
 				</div>
 
-				<form class="col s12">
+				<form autocomplete="off" class="col s12" [formGroup]="registerForm" novalidate>
 					<div *ngIf="state1">
+						<fieldset formGroupName="name">
 
-						<div class="input-field col s12">
-							<input id="first_name" type="text" class="validate">
-							<label for="first_name">Անուն</label>
-						</div>
-						<div class="input-field col s12">
-							<input id="last_name" type="text" class="validate">
-							<label for="last_name">Ազգանուն</label>
-						</div>
-						<div class="input-field col s12">
-							<input id="middle_name" type="text" class="validate">
-							<label for="middle_name">Հայրանուն</label>
-						</div>
-						<div class="col s12">
-							<a class="right white-text btn-large" (click)="toState2()">
-								<i class="material-icons">
-									arrow_forward
-								</i>
-							</a>
-						</div>
+							<div class="input-field col s12">
+								<input id="first_name" type="text" formControlName="firstName">
+								<label for="first_name">Անուն</label>
+							</div>
+							<div class="input-field col s12">
+								<input id="last_name" type="text" formControlName="lastName">
+								<label for="last_name">Ազգանուն</label>
+							</div>
+							<div class="input-field col s12">
+								<input id="middle_name" type="text" class="validate" formControlName="middleName">
+								<label for="middle_name">Հայրանուն</label>
+							</div>
+							<div class="col s12">
+								<a class="right white-text btn-large" (click)="nextTo2()">
+									<i class="material-icons">
+										arrow_forward
+									</i>
+								</a>
+							</div>
+						</fieldset>
 					</div>
 					<div *ngIf="state2">
 						<div class="input-field col s12">
-							<input type="text" class="datepicker">
+							<input type="text" class="datepicker" formControlName="birthDate">
 							<label for="birthdate">Ծննդյան ամսաթիվ</label>
 						</div>
 						<div class="input-field col s12">
-							<input id="mail" type="email" class="validate">
+							<input id="mail" type="email" formControlName="email">
 							<label for="mail">Էլ․ հասցե</label>
 						</div>
 						<div class="input-field col s12">
-							<input id="phone" type="text" class="validate">
+							<input id="phone" type="text" formControlName="phone">
 							<label for="phone">Հեռախոսահամար</label>
 						</div>
 						<div class="col s12">
-							<a class="left white-text btn-large"  (click)="toState1()">
+							<a class="left white-text btn-large" (click)="backTo1()">
 								<i class="material-icons">
 									arrow_back
 								</i>
 							</a>
-							<a class="right white-text btn-large" (click)="toState3()">
+							<a class="right white-text btn-large" (click)="nextTo3()">
 								<i class="material-icons">
 									arrow_forward
 								</i>
@@ -59,20 +61,20 @@
 
 					<div *ngIf="state3">
 						<div class="input-field col s12">
-							<input id="username" type="text" class="validate">
+							<input id="username" type="text" formControlName="username">
 							<label for="username">Օգտանուն</label>
 						</div>
 						<div class="input-field col s12">
-							<input id="password" type="password" class="validate">
+							<input id="password" type="password" formControlName="password">
 							<label for="password">Գաղտնաբառ</label>
 						</div>
 						<div class="input-field col s12">
-							<input id="repeat_password" type="password" class="validate">
+							<input id="repeat_password" type="password" formControlName="repeatPassword">
 							<label for="repeat_password">Կրկնե՛ք գաղտնաբառը</label>
 						</div>
 
-						<div class="input-field col s12">
-							<a class="left white-text btn-large">
+						<div class="col s12">
+							<a class="left white-text btn-large" (click)="backTo2()">
 								<i class="material-icons">
 									arrow_back
 								</i>
