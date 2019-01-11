@@ -27,13 +27,11 @@
 				{
 					edge: 'left'
 				});
+			var datePicker = M.Datepicker.init(document.getElementById('birthDat'), {});
+			console.log(datePicker);
 		}
 
 		document.addEventListener('DOMContentLoaded', function () {
-			//var mainNav = M.Sidenav.init(document.getElementById('sidenav-menu'),
-			//	{
-			//		edge: 'right'
-			//	});
 			var selects = M.FormSelect.init(document.querySelectorAll('select'), {});
 			var tab = M.Tabs.init(document.querySelector('.tabs'), {});
 			var collapsables = M.Collapsible.init(document.querySelectorAll('.collapsible'), {});

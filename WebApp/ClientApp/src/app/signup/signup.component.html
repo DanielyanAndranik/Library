@@ -12,50 +12,50 @@
 						<fieldset formGroupName="name">
 
 							<div class="input-field col s12">
-								<input id="first_name" type="text" formControlName="firstName">
-								<label for="first_name">Անուն</label>
+								<input placeholder="Անուն" type="text" formControlName="firstName"
+									   [ngClass]="{ 'valid': registerForm.controls.name.controls.firstName.valid, 'invalid': registerForm.controls.name.controls.firstName.invalid &&  registerForm.controls.name.controls.firstName.touched}">
 							</div>
 							<div class="input-field col s12">
-								<input id="last_name" type="text" formControlName="lastName">
-								<label for="last_name">Ազգանուն</label>
+								<input placeholder="Ազգանուն" type="text" formControlName="lastName"
+									   [ngClass]="{ 'valid': registerForm.controls.name.controls.lastName.valid, 'invalid': registerForm.controls.name.controls.lastName.invalid &&  registerForm.controls.name.controls.lastName.touched}">
 							</div>
 							<div class="input-field col s12">
-								<input id="middle_name" type="text" class="validate" formControlName="middleName">
-								<label for="middle_name">Հայրանուն</label>
+								<input placeholder="Հայրանուն" type="text" formControlName="middleName"
+									   [ngClass]="{ 'valid': registerForm.controls.name.controls.middleName.valid, 'invalid': registerForm.controls.name.controls.middleName.invalid &&  registerForm.controls.name.controls.middleName.touched}">
 							</div>
 							<div class="col s12">
-								<a class="right white-text btn-large" (click)="nextTo2()">
+								<button class="right white-text btn-large" (click)="nextTo2()" [disabled]="!isFirstStepValid()">
 									<i class="material-icons">
 										arrow_forward
 									</i>
-								</a>
+								</button>
 							</div>
 						</fieldset>
 					</div>
 					<div *ngIf="state2">
 						<div class="input-field col s12">
-							<input type="text" class="datepicker" formControlName="birthDate">
+							<input type="text" id="birthDat" class="datepicker" formControlName="birthDate">
 							<label for="birthdate">Ծննդյան ամսաթիվ</label>
 						</div>
 						<div class="input-field col s12">
-							<input id="mail" type="email" formControlName="email">
-							<label for="mail">Էլ․ հասցե</label>
+							<input id="email" type="email" formControlName="email" [ngClass]="{ 'valid': registerForm.controls.email.valid, 'invalid': registerForm.controls.email.invalid &&  registerForm.controls.email.touched}" >
+							<label for="email">Էլ․ հասցե</label>
 						</div>
 						<div class="input-field col s12">
 							<input id="phone" type="text" formControlName="phone">
 							<label for="phone">Հեռախոսահամար</label>
 						</div>
 						<div class="col s12">
-							<a class="left white-text btn-large" (click)="backTo1()">
+							<button class="left white-text btn-large" (click)="backTo1()">
 								<i class="material-icons">
 									arrow_back
 								</i>
-							</a>
-							<a class="right white-text btn-large" (click)="nextTo3()">
+							</button>
+							<button class="right white-text btn-large" (click)="nextTo3()"  [disabled]="!isSecondStepValid()">
 								<i class="material-icons">
 									arrow_forward
 								</i>
-							</a>
+							</button>
 						</div>
 					</div>
 
