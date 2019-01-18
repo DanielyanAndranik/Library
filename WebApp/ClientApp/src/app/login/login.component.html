@@ -4,17 +4,22 @@
 				<div class="col s12">
 					<h3 class="header center-align">Մուտք</h3>
 				</div>
-				<form autocomplete="off" class="col s12 center-align"  (submit)="login($event)">
+				<form autocomplete="off" class="col s12 center-align" [formGroup]="loginForm" novalidate>
 						<div class="input-field col s12">
-							<input id="username" type="text" class="validate" name="username" [(ngModel)]="username">
+							<input id="username" type="text" name="username" [(ngModel)]="username" formControlName="username"
+									   [ngClass]="{ 'valid': loginForm.controls.username.valid, 'invalid': loginForm.controls.username.invalid &&  loginForm.controls.username.touched}">
+
 							<label for="username">Օգտանուն</label>
 						</div>
 						<div class="input-field col s12">
-							<input id="password" type="password" class="validate" name="password" [(ngModel)]="password">
+							<input id="password" type="password" name="password" [(ngModel)]="password" formControlName="password"
+									   [ngClass]="{ 'valid': loginForm.controls.password.valid, 'invalid': loginForm.controls.password.invalid &&  loginForm.controls.password.touched}">
+
 							<label for="password">Գաղտնաբառ</label>
 						</div>
 						<div class="input-field col s12 center-align">
-							<button class="waves-effect waves-light btn-large" (click)="login">Մուտք</button>
+							<button class="waves-effect waves-light btn-large" (click)="login()"
+									[disabled]="!canLogin()">Մուտք</button>
 						</div>
 						<p class="col s12 center-align">Դեռ չե՞ք գրանցվել։ Գրանցվե՛ք <a [routerLink]="['../signup']" class="teal-text">այստեղ</a>։</p>
 				</form>
