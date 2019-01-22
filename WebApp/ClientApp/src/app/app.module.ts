@@ -16,6 +16,9 @@ import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { OrdersBoardComponent } from './orders-board/orders-board.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { BooksComponent } from './books/books.component';
+import { AuthGuard } from './Guards/auth.guard';
+import { RoleGuard } from './Guards/role.guard';
+import { AuthService } from './services/AuthService/auth.service';
 
 @NgModule({
 	declarations: [
@@ -42,13 +45,24 @@ import { BooksComponent } from './books/books.component';
 			{ path: 'books', component: BooksComponent, pathMatch: 'full' },
 			{ path: 'login', component: LoginComponent, pathMatch: 'full' },
 			{ path: 'signup', component: SignupComponent, pathMatch: 'full' },
-			{ path: 'lib_dashboard', component: LibrarianDashboardComponent, pathMatch: 'full' },
-			{ path: 'lib_dashboard', component: LibrarianDashboardComponent, pathMatch: 'full' },
-			{ path: 'my_orders', component: UserOrdersComponent, pathMatch: 'full' },
+			{
+				path: 'dashboard',
+				component: LibrarianDashboardComponent,
+				pathMatch: 'full',
+				canActivate: [RoleGuard],
+				data: {role: 'Librarian'}
+			},
+			{
+				path: 'orders',
+				component: UserOrdersComponent,
+				pathMatch: 'full',
+				canActivate: [RoleGuard],
+				data: { role: 'Customer' }
+			},
 			{ path: 'edit_book', component: EditBookComponent, pathMatch: 'full' }
 		])
 	],
-	providers: [],
+	providers: [AuthGuard, RoleGuard, AuthService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { AuthService } from '../services/AuthService/auth.service';
 
 @Component({
 	selector: 'app-login',
+	providers: [AuthService],
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.css']
 })
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
 		var username = this.loginForm.value.username;
 		var password = this.loginForm.value.password;
 		this.auth.login(username, password).subscribe(
-			res => { localStorage.setItem('token', res.token), },
+			res => { localStorage.setItem('token', res.toString()); },
 			err => { }
 		);
 	}
