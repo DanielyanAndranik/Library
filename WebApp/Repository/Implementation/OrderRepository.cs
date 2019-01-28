@@ -19,21 +19,9 @@ namespace WebApp.Repository
             {
                 try
                 {
-                    var order = (await context.Orders.AddAsync(new Order
-                    {
-                        CustomerId = _order.CustomerId,
-                        OrderDate = _order.OrderDate,
-                        ExpectedReturnDate = _order.ExpectedReturnDate,
-                        ReturnDate = _order.ReturnDate
-                    }
-                    )).Entity;
+                    var order = (await context.Orders.AddAsync(_order)).Entity;
 
                     await context.SaveChangesAsync();
-
-                    foreach (var orderBook in _order.OrderBooks)
-                    {
-                        await context.OrderBooks.AddAsync(new OrderBook { OrderId = order.Id, BookId = orderBook.BookId });
-                    }
 
                     foreach (var orderService in _order.OrderServices)
                     {
@@ -62,9 +50,6 @@ namespace WebApp.Repository
                 {
                     var order = await context.Orders.FindAsync(id);
 
-                    var orderBooks = context.OrderBooks.Where(o => o.OrderId == order.Id);
-                    context.RemoveRange(orderBooks.ToArray());
-
                     var orderServices = context.OrderServices.Where(o => o.OrderId == order.Id);
                     context.RemoveRange(orderServices.ToArray());
 
@@ -90,24 +75,18 @@ namespace WebApp.Repository
             orders = from order in orders
                      join customer in context.Users
                      on order.CustomerId equals customer.Id
+                     join book in context.Books
+                     on order.BookId equals book.Id
                      select new Order
                      {
                          Id = order.Id,
+                         BookId = order.BookId,
+                         Book = book,
                          CustomerId = order.CustomerId,
+                         Customer = customer,
                          OrderDate = order.OrderDate,
                          ExpectedReturnDate = order.ExpectedReturnDate,
                          ReturnDate = order.ReturnDate,
-                         Customer = customer,
-                         OrderBooks = context.OrderBooks
-                                        .Where(orderBook => orderBook.OrderId == order.Id)
-                                        .Join(context.Books, o => o.BookId, b => b.Id,
-                                                (o, b) => new OrderBook
-                                                {
-                                                    Id = o.Id,
-                                                    BookId = b.Id,
-                                                    Book = b,
-                                                    OrderId = o.OrderId
-                                                }).ToList(),
                          OrderServices = context.OrderServices
                                             .Where(orderService => orderService.OrderId == order.Id)
                                             .Join(context.Users, o => o.LibrarianId, l => l.Id,
@@ -131,24 +110,18 @@ namespace WebApp.Repository
                      where order.CustomerId == id
                      join customer in context.Users
                      on order.CustomerId equals customer.Id
+                     join book in context.Books
+                     on order.BookId equals book.Id
                      select new Order
                      {
                          Id = order.Id,
+                         BookId = order.BookId,
+                         Book = book,
                          CustomerId = order.CustomerId,
+                         Customer = customer,
                          OrderDate = order.OrderDate,
                          ExpectedReturnDate = order.ExpectedReturnDate,
                          ReturnDate = order.ReturnDate,
-                         Customer = customer,
-                         OrderBooks = context.OrderBooks
-                                        .Where(orderBook => orderBook.OrderId == order.Id)
-                                        .Join(context.Books, o => o.BookId, b => b.Id,
-                                                (o, b) => new OrderBook
-                                                {
-                                                    Id = o.Id,
-                                                    BookId = b.Id,
-                                                    Book = b,
-                                                    OrderId = o.OrderId
-                                                }).ToList(),
                          OrderServices = context.OrderServices
                                             .Where(orderService => orderService.OrderId == order.Id)
                                             .Join(context.Users, o => o.LibrarianId, l => l.Id,
@@ -171,24 +144,18 @@ namespace WebApp.Repository
             orders = from order in orders
                      join customer in context.Users
                      on order.CustomerId equals customer.Id
+                     join book in context.Books
+                     on order.BookId equals book.Id
                      select new Order
                      {
                          Id = order.Id,
+                         BookId = order.BookId,
+                         Book = book,
                          CustomerId = order.CustomerId,
+                         Customer = customer,
                          OrderDate = order.OrderDate,
                          ExpectedReturnDate = order.ExpectedReturnDate,
                          ReturnDate = order.ReturnDate,
-                         Customer = customer,
-                         OrderBooks = context.OrderBooks
-                                        .Where(orderBook => orderBook.OrderId == order.Id)
-                                        .Join(context.Books, o => o.BookId, b => b.Id,
-                                                (o, b) => new OrderBook
-                                                {
-                                                    Id = o.Id,
-                                                    BookId = b.Id,
-                                                    Book = b,
-                                                    OrderId = o.OrderId
-                                                }).ToList(),
                          OrderServices = context.OrderServices
                                             .Where(orderService => orderService.OrderId == order.Id)
                                             .Join(context.Users, o => o.LibrarianId, l => l.Id,
@@ -211,19 +178,6 @@ namespace WebApp.Repository
             {
                 try
                 {
-                    foreach (var orderBook in order.OrderBooks)
-                    {
-                        var _orderBook = context.OrderBooks.Find(orderBook.Id);
-                        if (_orderBook == null)
-                        {
-                            await context.OrderBooks.AddAsync(new OrderBook { OrderId = order.Id, BookId = orderBook.BookId });
-                        }
-                        else
-                        {
-                            context.Update(_orderBook);
-                        }
-                    }
-
                     foreach (var orderService in order.OrderServices)
                     {
                         var _orderService = context.OrderServices.Find(orderService.Id);
@@ -240,6 +194,7 @@ namespace WebApp.Repository
                     var _order = context.Orders.Find(order.Id);
 
                     _order.Id = order.Id;
+                    _order.BookId = order.BookId;
                     _order.CustomerId = order.CustomerId;
                     _order.OrderDate = order.OrderDate;
                     _order.ExpectedReturnDate = order.ExpectedReturnDate;

@@ -13,9 +13,8 @@
 <body>
 	<app-root>Loading...</app-root>
 	<script src="assets/js/materialize.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			crossorigin="anonymous"></script>
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/main.js"></script>
 	<script>
 
 		function init() {
@@ -28,7 +27,6 @@
 					edge: 'left'
 				});
 			var datePicker = M.Datepicker.init(document.getElementById('birthDat'), {});
-			console.log(datePicker);
 		}
 
 		document.addEventListener('DOMContentLoaded', function () {

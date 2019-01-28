@@ -50,7 +50,7 @@ namespace WebApp.Controllers
                     );
 
                 var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
-                return Ok(tokenString);
+                return new OkObjectResult(new { Token = tokenString });
             }
         }
     }

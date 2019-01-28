@@ -1,72 +1,63 @@
-<form class="col s12">
-	<div class="row" style="margin-bottom: 0px; margin-top: 20px;">
-		<div class="col s9 inputs">
-			<div class="row">
-				<div class="input-field col">
-					<input placeholder="Վերնագիր" name="title" type="text" [(ngModel)]="filter.title">
-				</div>
-				<div class="input-field col">
-					<input placeholder="Հեղինակ" name="author" type="text" [(ngModel)]="filter.author">
-				</div>
-				<div class="input-field col">
-					<input placeholder="Հրատարակչություն" name="publisher" type="text"[(ngModel)]="filter.publisher">
-				</div>
-				<div class="input-field col">
-					<input placeholder="Տարեթիվ" name="date" type="text" [(ngModel)]="filter.published">
-				</div>
-				<div class="input-field col">
-					<select multiple name="language" [(ngModel)]="filter.language">
-						<option value="" disabled>Լեզու</option>
-						<option value="1">Հայերեն</option>
-						<option value="2">Անգլերեն</option>
-						<option value="3">Ռուսերեն</option>
-					</select>
-				</div>
-			</div>
-		</div>
-		<div class="col s3">
-			<div class="row">
-				<div class="input-field col s12 right">
-					<a class="waves-effect waves-light btn-large right" (click)="getBooks()">Բեռնել</a>
-					<a class="waves-effect waves-light btn-large right" [routerLink]="['../edit_book']" (click)="newBook()">Նորը</a>
-				</div>
-			</div>
-		</div>
-		
-	</div>
-	
-</form>
-<div class="col s12">
+<div class="menu-bar grey darken-4">
+	<ul>
+		<li><button (click)="addBook()">Նորը</button></li>
+		<li><button [disabled]="selectedBook == null" (click)="editBook()">Խմբագրել</button></li>
+		<li><button [disabled]="selectedBook == null" (click)="deleteBook()">Ջնջել</button></li>
+		<li class="right hide-on-small-only"><button class="filter-toggle">Ֆիլտր<i class="small material-icons">keyboard_arrow_down</i></button></li>
+	</ul>
+</div>
 
-<ul class="header z-depth-4">
-	<li class="row">
-		<p class="col s1">Համար</p>
-		<p class="col s2">Հեղինակ</p>
-		<p class="col s2">Վերնագիր</p>
-		<p class="col s2">Հրատարակչություն</p>
-		<p class="col s1">Լեզու</p>
-		<p class="col s2">Տեսակ</p>
-		<p class="col s1">Ընդհանուր քանակ</p>
-		<p class="col s1">Առկա քանակ</p>
-	</li>
-</ul>
-<ul class="collapsible">
-	<li *ngFor="let book of books; let index=index; let odd=odd; let even=even;">
-		<div class="collapsible-header row">
-			<p class="col s1">{{book.id}}</p>
-			<p class="col s2">{{book.author}}</p>
-			<p class="col s2">{{book.title}}</p>
-			<p class="col s2">{{book.publisher}}</p>
-			<p class="col s1">{{book.language}}</p>
-			<p class="col s2">{{book.type}}</p>
-			<p class="col s1">{{book.totalCount}}</p>
-			<p class="col s1">{{book.availableCount}}</p>
+<div class="filter-bar closed">
+	<form autocomplete="off" class="row">
+		<div class="col s12 m6 l4 xl3">
+			<input placeholder="Վերնագիր" name="title" type="text" [(ngModel)]="filter.title">
+			<input placeholder="Հեղինակ" name="author" type="text" [(ngModel)]="filter.author">
 		</div>
-		<div class="collapsible-body row">
-			<div class="col s12">
-				<a class="waves-effect waves-light btn-large" [routerLink]="['../edit_book']" (click)="editBook(book)">Խմբագրել</a>
-			</div>
+		<div class="col s12 m6 l4 xl3">
+
+			<input placeholder="Հրատարակչություն" name="publisher" type="text" [(ngModel)]="filter.publisher">
+			<input placeholder="Տարեթիվ" name="date" type="text" [(ngModel)]="filter.published">
 		</div>
-	</li>
-</ul>
+
+		<div class="col s12 m6 l4 xl3">
+
+			<button class="btn" (click)="loadBooks()">Բեռնել</button>
+		</div>
+	</form>
+	<div *ngIf="loading">
+
+		<div  class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+	</div>
+</div>
+
+<div class="grid">
+	<table>
+		<thead>
+			<tr>
+				<th>Համար</th>
+				<th>Վերնագիր</th>
+				<th>Հեղինակ</th>
+				<th>Հրատարակչություն</th>
+				<th>Տարեթիվ</th>
+				<th>Լեզու</th>
+				<th>Տեսակ</th>
+				<th>Ընդհանուր քանակ</th>
+				<th>Առկա քանակ</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr *ngFor="let book of books; let index=index; let odd=odd; let even=even;" (click)="select(book)">
+				<td>{{book.id}}</td>
+				<td>{{book.title}}</td>
+				<td>{{book.author}}</td>
+				<td>{{book.publisher}}</td>
+				<td>{{book.published}}</td>
+				<td>{{book.language}}</td>
+				<td>{{book.type}}</td>
+				<td>{{book.totalCount}}</td>
+				<td>{{book.availableCount}}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

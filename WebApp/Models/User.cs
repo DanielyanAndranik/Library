@@ -10,7 +10,7 @@ namespace WebApp.Models
         public User()
         {
             Orders = new HashSet<Order>();
-            OrderService = new HashSet<OrderService>();
+            OrderServices = new HashSet<OrderService>();
         }
 
         public int Id { get; set; }
@@ -25,6 +25,6 @@ namespace WebApp.Models
         public bool Approved { get; set; }
 
         public ICollection<Order> Orders { get; set; }
-        public ICollection<OrderService> OrderService { get; set; }
+        public ICollection<OrderService> OrderServices { get; set; }
     }
 }

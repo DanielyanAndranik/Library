@@ -17,7 +17,6 @@ namespace WebApp.Models
 
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<OrderBook> OrderBooks { get; set; }
         public virtual DbSet<OrderService> OrderServices { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
@@ -31,7 +30,7 @@ namespace WebApp.Models
 
                 entity.Property(e => e.Genre).HasMaxLength(128);
 
-                entity.Property(e => e.Image).IsUnicode(false);
+                entity.Property(e => e.Image).HasColumnType("image");
 
                 entity.Property(e => e.Language)
                     .IsRequired()
@@ -45,6 +44,10 @@ namespace WebApp.Models
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(256);
+
+                entity.Property(e => e.Type)
+                    .IsRequired()
+                    .HasMaxLength(128);
             });
 
             modelBuilder.Entity<Order>(entity =>
@@ -55,26 +58,17 @@ namespace WebApp.Models
 
                 entity.Property(e => e.ReturnDate).HasColumnType("date");
 
+                entity.HasOne(d => d.Book)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.BookId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Order__BookId__6477ECF3");
+
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Order__CustomerI__2A164134");
-            });
-
-            modelBuilder.Entity<OrderBook>(entity =>
-            {
-                entity.HasOne(d => d.Book)
-                    .WithMany(p => p.OrderBook)
-                    .HasForeignKey(d => d.BookId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrderBook__BookI__1AD3FDA4");
-
-                entity.HasOne(d => d.Order)
-                    .WithMany(p => p.OrderBooks)
-                    .HasForeignKey(d => d.OrderId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrderBook__Order__19DFD96B");
+                    .HasConstraintName("FK__Order__CustomerI__6383C8BA");
             });
 
             modelBuilder.Entity<OrderService>(entity =>
@@ -84,16 +78,16 @@ namespace WebApp.Models
                     .HasMaxLength(32);
 
                 entity.HasOne(d => d.Librarian)
-                    .WithMany(p => p.OrderService)
+                    .WithMany(p => p.OrderServices)
                     .HasForeignKey(d => d.LibrarianId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrderServ__Libra__2B0A656D");
+                    .HasConstraintName("FK__OrderServ__Libra__66603565");
 
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderServices)
                     .HasForeignKey(d => d.OrderId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrderServ__Order__1BC821DD");
+                    .HasConstraintName("FK__OrderServ__Order__656C112C");
             });
 
             modelBuilder.Entity<User>(entity =>

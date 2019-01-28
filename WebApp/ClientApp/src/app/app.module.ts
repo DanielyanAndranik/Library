@@ -19,6 +19,8 @@ import { BooksComponent } from './books/books.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { RoleGuard } from './Guards/role.guard';
 import { AuthService } from './services/AuthService/auth.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { BookService } from './services/BookService/book.service';
 
 @NgModule({
 	declarations: [
@@ -33,7 +35,8 @@ import { AuthService } from './services/AuthService/auth.service';
 		UserOrdersComponent,
 		OrdersBoardComponent,
 		EditBookComponent,
-		BooksComponent
+		BooksComponent,
+		DashboardComponent
 	],
 	imports: [
 		BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -47,10 +50,16 @@ import { AuthService } from './services/AuthService/auth.service';
 			{ path: 'signup', component: SignupComponent, pathMatch: 'full' },
 			{
 				path: 'dashboard',
-				component: LibrarianDashboardComponent,
-				pathMatch: 'full',
+				component: DashboardComponent,
 				canActivate: [RoleGuard],
-				data: {role: 'Librarian'}
+				data: { role: 'Librarian' },
+				children: [
+					{ path: '', redirectTo: 'book', pathMatch: 'full' },
+					{ path: 'book',	component: BooksBoardComponent },
+					{ path: 'book/new', component: EditBookComponent },
+					{ path: 'book/edit', component: EditBookComponent, pathMatch: 'full' },
+					{ path: 'order', component: OrdersBoardComponent }
+				]
 			},
 			{
 				path: 'orders',
@@ -58,11 +67,10 @@ import { AuthService } from './services/AuthService/auth.service';
 				pathMatch: 'full',
 				canActivate: [RoleGuard],
 				data: { role: 'Customer' }
-			},
-			{ path: 'edit_book', component: EditBookComponent, pathMatch: 'full' }
+			}
 		])
 	],
-	providers: [AuthGuard, RoleGuard, AuthService],
+	providers: [AuthGuard, RoleGuard, AuthService, BookService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

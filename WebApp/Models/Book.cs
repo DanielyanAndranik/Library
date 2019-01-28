@@ -9,7 +9,7 @@ namespace WebApp.Models
     {
         public Book()
         {
-            OrderBook = new HashSet<OrderBook>();
+            Orders = new HashSet<Order>();
         }
 
         public int Id { get; set; }
@@ -19,12 +19,12 @@ namespace WebApp.Models
         public DateTime? Published { get; set; }
         public string Publisher { get; set; }
         public string Genre { get; set; }
-        public bool? IsOccupational { get; set; }
-        public string Image { get; set; }
+        public string Type { get; set; }
+        public byte[] Image { get; set; }
         public byte TotalCount { get; set; }
         public byte AvailableCount { get; set; }
         public int? Rating { get; set; }
 
-        public ICollection<OrderBook> OrderBook { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

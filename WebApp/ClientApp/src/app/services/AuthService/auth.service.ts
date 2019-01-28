@@ -8,7 +8,7 @@ export class AuthService {
 	constructor(private http: HttpClient, private router: Router) { }
 
 	login(username: string, password: string) {
-		return this.http.post('api/login', { username, password });
+		return this.http.post('api/auth', { username, password });
 	}
 
 	register() {
@@ -16,7 +16,7 @@ export class AuthService {
 	}
 
 	decode() {
-		return { role: 'Libraria' };
+		return { role: 'Librarian' };
 	}
 
 	logout() {

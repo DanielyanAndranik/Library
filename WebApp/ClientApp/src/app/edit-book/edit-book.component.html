@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col s12">
-			<h4 class="center">{{mode}}</h4>
+			<h4 class="center">{{mode.toString()}}</h4>
 		</div>
 	</div>
 	<div class="row">
@@ -26,15 +26,15 @@
 					<input placeholder="Քանակ" name="count" type="text" [(ngModel)]="book.totalCount">
 				</div>
 				<div class="input-field col s12">
-					<select multiple name="language" [(ngModel)]="book.language">
+					<select name="language" [(ngModel)]="book.language">
 						<option value="" disabled>Լեզու</option>
-						<option value="1">Հայերեն</option>
-						<option value="2">Անգլերեն</option>
-						<option value="3">Ռուսերեն</option>
+						<option value="hy">Հայերեն</option>
+						<option value="en">Անգլերեն</option>
+						<option value="ru">Ռուսերեն</option>
 					</select>
 				</div>
 				<div class="input-field col s12 center">
-					<a class="waves-effect waves-light btn-large">Հիշել</a>
+					<button class="waves-effect waves-light btn-large" (click)="submit()">Հաստատել</button>
 				</div>
 			</div>
 		</form>

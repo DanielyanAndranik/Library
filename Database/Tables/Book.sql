@@ -7,8 +7,8 @@
     [Published] DATE NULL, 
     [Publisher] NVARCHAR(128) NULL, 
 	[Genre] NVARCHAR(128) NULL,
-    [IsOccupational] BIT NULL, 
-    [Image] VARCHAR(MAX) NULL,
+    [Type] NVARCHAR(128) NOT NULL, 
+    [Image] IMAGE NULL,
 	[TotalCount] TINYINT NOT NULL, 
     [AvailableCount] TINYINT NOT NULL, 
     [Rating] INT NULL

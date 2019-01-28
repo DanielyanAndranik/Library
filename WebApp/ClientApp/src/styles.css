@@ -6,9 +6,9 @@ html, body{
 	padding: 0px;
 	overflow-x: hidden;
 }
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
 	display: none;
-}
+}*/
 ul.tabs li.indicator {
 	background-color: #26a69a;
 }

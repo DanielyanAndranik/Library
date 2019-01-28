@@ -41,7 +41,7 @@ namespace WebApp.Controllers
         }
 
         //[Authorize(Policy = "Librarian")]
-        [HttpPost(Name = "CreateBook")]
+        [HttpPost]
         public async Task<IActionResult> Post([FromBody] Book book)
         {
             var result = await repository.CreateBook(book);

@@ -26,6 +26,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="BaseRopository.cs" />
+    <Compile Remove="IBookRepository.cs" />
+    <Compile Remove="IOrderRepository.cs" />
+    <Compile Remove="IUserRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\src\assets\images\" />
     <Folder Include="ClientApp\src\assets\css\" />
   </ItemGroup>
